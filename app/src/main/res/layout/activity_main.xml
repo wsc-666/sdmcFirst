@@ -1,18 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <include layout="@layout/title"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/system_info"
+        android:layout_width="465dp"
+        android:layout_height="190dp"
+        android:text=""
+        android:background="#e8e8e8"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"/>
+
+    <VideoView
+        android:id="@+id/video"
+        android:layout_width="480dp"
+        android:layout_height="190dp"
+        android:layout_toRightOf="@+id/system_info"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"/>
+
+    <ListView
+        android:id="@+id/wifi_view"
+        android:layout_width="290dp"
+        android:layout_height="300dp"
+        android:background="#e8e8e8"
+        android:layout_below="@+id/system_info"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"/>
+
+    <ListView
+        android:id="@+id/bluetooth_view"
+        android:layout_width="290dp"
+        android:layout_height="300dp"
+        android:background="#e8e8e8"
+        android:layout_toRightOf="@+id/wifi_view"
+        android:layout_below="@+id/video"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"/>
+
+
+    <LinearLayout
+        android:layout_width="380dp"
+        android:layout_height="300dp"
+        android:background="#e8e8e8"
+        android:layout_toRightOf="@+id/bluetooth_view"
+        android:layout_below="@+id/video"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="测试项"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:background="#e8e8e8"
+            />
+
+        <TextView
+            android:id="@+id/network"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="网络状态，显示WIFI/以太网IP"
+            android:textColor="#000000"
+            android:background="#e8e8e8"
+            />
+
+        <TextView
+            android:id="@+id/led"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Led灯测试√"
+            android:textColor="#000000"
+            android:background="#e8e8e8"
+            />
+
+        <TextView
+            android:id="@+id/usb"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="监听U盘挂载状态"
+            android:textColor="#000000"
+            android:background="#e8e8e8"
+            />
+
+        <TextView
+            android:id="@+id/resetKey"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="复位键测试"
+            android:textColor="#000000"
+            android:background="#e8e8e8"
+            />
+
+        <TextView
+            android:id="@+id/power"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="待机键测试"
+            android:textColor="#000000"
+            android:background="#e8e8e8"
+            />
+
+        <TextView
+            android:id="@+id/shortPressUp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="短按UP键进入tvSettings"
+            android:textColor="#000000"
+            android:background="#e8e8e8"
+            />
+
+        <TextView
+            android:id="@+id/longPressUp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="长按UP键恢复出厂设置"
+            android:textColor="#000000"
+            android:background="#e8e8e8"
+            />
+
+        <Button
+            android:id="@+id/test_button"
+            android:layout_width="380dp"
+            android:layout_height="50dp"
+            android:text="保存测试"
+            android:layout_toRightOf="@+id/bluetooth_view"
+            android:layout_below="@+id/test_view"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
